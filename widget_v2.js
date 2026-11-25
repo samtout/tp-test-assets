@@ -11,7 +11,7 @@
       var scripts = document.getElementsByTagName('script');
       for (var i = scripts.length - 1; i >= 0; i--) {
         var src = scripts[i].src || '';
-        if (src.indexOf('widget.js') !== -1 && src.indexOf('?') !== -1) {
+        if (src.indexOf('widget') !== -1 && src.indexOf('?') !== -1) {
           var q = new URL(src).searchParams.get('run');
           if (q) return q.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 12).toUpperCase();
         }
